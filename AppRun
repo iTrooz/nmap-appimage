@@ -16,7 +16,6 @@ EXEC_NAME=`basename $FULL_PATH`
 BINS_PATH="usr/bin"
 
 # Try to determine executable from appimage name
-
 if [ "$EXEC_NAME" != "AppRun" ]; then
 	EXEC_FILE_PATH="$APP_DIR/$BINS_PATH/$EXEC_NAME"
 	if [ -x "$EXEC_FILE_PATH" ] ; then
@@ -29,26 +28,20 @@ if [ "$EXEC_NAME" != "AppRun" ]; then
 	fi
 fi
 
+# Try to determine executable from first argument
 
-case $1 in
+EXEC_FILE_PATH="$APP_DIR/$BINS_PATH/$1"
+if [ -n "$1" ] && [ -x "$EXEC_FILE_PATH" ] ; then
+	shift
+	exec "$EXEC_FILE_PATH" "$@"
+fi
 
-	--exec)
-		EXEC_FILE_PATH="$APP_DIR/$BINS_PATH/$2"
-		if [ -x "$EXEC_FILE_PATH" ] ; then
-			shift ; shift
-			exec "$EXEC_FILE_PATH" "$@"
-		else
-			echo "Unable to find '$2' in binary directory."
-			echo "Use '$0' --lsexec to list the existing binaries."
-			exit 1
-		fi
-	;;
+# Print possible executables if asked
+if [ "$1" = "lsexec" ] || [ "$1" = "--lsexec" ]; then
+	ls "$APP_DIR/$BINS_PATH"
+	exit 0
+fi
 
-	--lsexec)
-		ls "$APP_DIR/$BINS_PATH"
-		exit 0
-	;;
-esac
+# Assume nmap by default
 
-echo "AppRun: please select an executable to run with --exec. List executables with --lsexec"
-exit 1
+exec "$APP_DIR/$BINS_PATH/nmap" $@
