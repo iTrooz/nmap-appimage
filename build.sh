@@ -14,6 +14,7 @@ svn checkout $NMAP_SVN/$NMAP_VER_FOLDER $DIR/nmap
 NMAP_VER=${NMAP_VER_FOLDER%/}
 NMAP_VER=${NMAP_VER#nmap-}
 echo "-- nmap version is $NMAP_VER"
+echo $NMAP_VER > $DIR/NMAP_VERSION
 
 echo "--- Build nmap..."
 cd $DIR/nmap
