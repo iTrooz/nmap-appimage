@@ -1,6 +1,6 @@
 # nmap AppImage
 
-This is a self-contained package of nmap, ncat, and nping
+This is a self-contained package of nmap, ncat, and nping, built in Ubuntu 16.04
 
 I made this so it could be uploaded/used easily on compromised hosts (in CTF/similar of course)
 
