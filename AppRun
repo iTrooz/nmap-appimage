@@ -1,0 +1,54 @@
+#!/bin/sh
+
+# This is a sample AppRun that can be adapted for building your own
+# AppDirs.  It contains several interesting features, some of which may
+# or may not be useful to you.
+# Much of the code to build and run the application was taken from
+# the AppRun script for ROX-Session, by Thomas Leonard.
+
+# INSPIRED BY https://www.skepticats.com/rox/wrappers.html#template
+
+# Set the name of the executable here.
+FULL_PATH=`realpath $0`
+APP_DIR=`dirname $0`
+EXEC_NAME=`basename $FULL_PATH`
+
+BINS_PATH="usr/bin"
+
+# Try to determine executable from appimage name
+
+if [ "$EXEC_NAME" != "AppRun" ]; then
+	EXEC_FILE_PATH="$APP_DIR/$BINS_PATH/$EXEC_NAME"
+	if [ -x "$EXEC_FILE_PATH" ] ; then
+		shift ; shift
+		exec "$EXEC_FILE_PATH" "$@"
+	else
+		echo "Unable to find '$EXEC_NAME' in binary directory."
+		echo "Use '$0' --lsexec to list the existing binaries."
+		exit 1
+	fi
+fi
+
+
+case $1 in
+
+	--exec)
+		EXEC_FILE_PATH="$APP_DIR/$BINS_PATH/$2"
+		if [ -x "$EXEC_FILE_PATH" ] ; then
+			shift ; shift
+			exec "$EXEC_FILE_PATH" "$@"
+		else
+			echo "Unable to find '$2' in binary directory."
+			echo "Use '$0' --lsexec to list the existing binaries."
+			exit 1
+		fi
+	;;
+
+	--lsexec)
+		ls "$APP_DIR/$BINS_PATH"
+		exit 0
+	;;
+esac
+
+echo "AppRun: please select an executable to run with --exec. List executables with --lsexec"
+exit 1
