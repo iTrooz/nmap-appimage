@@ -1,0 +1,46 @@
+name: CI
+on:
+  schedule:
+    - cron: '0 0 1 * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+     
+    container:
+      image: ubuntu:16.04
+
+    steps:
+      - name: Install necessary tools
+        run: |
+          apt update
+          apt install -y git subversion curl make gcc g++ autoconf file appstream
+      
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Run build script
+        run: ./build.sh
+
+      - name: Upload AppImage
+        uses: actions/upload-artifact@v3
+        with:
+          path: '*.appImage'
+      
+      - name: Get last github release version
+        id: last_version
+        uses: pozetroninc/github-action-get-latest-release@master
+        with:
+          repository: ${{ github.repository }}
+
+      - name: Get nmap release version
+        run: echo "NMAP_VERSION=`cat NMAP_VERSION`" >> $GITHUB_ENV
+
+      - name: Create release if new nmap version
+        if: "${{ env.NMAP_VERSION != steps.last_version.outputs.release }}"
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "*.AppImage"
+          tag: v${{env.NMAP_VERSION}}
