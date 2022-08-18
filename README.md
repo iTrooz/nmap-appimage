@@ -1,11 +1,13 @@
 # nmap AppImage
 
+## Intro
 This is a self-contained package of nmap, ncat, and nping, built in Ubuntu 16.04
 
 I made this so it could be uploaded/used easily on compromised hosts (in CTF/similar of course)
 
 Releases are automatic and happen each month, if a new nmap version was released
 
+## Syntax
 Different syntaxes are available :
 ```
 nmap.AppImage <nmap options> # launhes as nmap
@@ -25,8 +27,9 @@ Examples :
 ln -s ncat nmap.AppImage
 ./ncat -lvp 8080
 ```
+Note : if the environnment you are in doesn't have fuse, you may need to add the flag `--appimage-extract-and-run`
 
-
+## How ?
 Launching multiple executables from the same AppImage is possible thanks to a modified AppRun , which was inspired by https://www.skepticats.com/rox/wrappers.html#template
 
 You can find a more generic modified version at https://gist.github.com/iTrooz/f287a48b95d672c3c97fea4f12a40891
