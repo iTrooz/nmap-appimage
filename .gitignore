@@ -1,5 +1,6 @@
 nmap
 AppDir
 *.AppImage
+*.AppImage.zsync
 NMAP_VERSION
 linuxdeploy

@@ -28,7 +28,9 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: nmap AppImage
-          path: '*.AppImage'
+          path: |
+            *.AppImage
+            *.AppImage.zsync
       
       - name: Get last github release version
         id: last_version
@@ -43,5 +45,5 @@ jobs:
         if: "${{ env.NMAP_VERSION != steps.last_version.outputs.release }}"
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "*.AppImage"
+          artifacts: "*.AppImage,*.AppImage.zsync"
           tag: ${{env.NMAP_VERSION}}
