@@ -10,8 +10,8 @@ Releases are automatic and happen each month, if a new nmap version was released
 ## Syntax
 Different syntaxes are available :
 ```
-nmap.AppImage <nmap options> # launhes as nmap
-nmap.AppImage <tool name> <tool options> # launches as the specified tool
+nmap.AppImage <nmap options> # run as nmap
+nmap.AppImage <tool name> <tool options> # run as the specified tool
 nmap.AppImage lsexec # list available tools
 
 mv nmap.AppImage <tool> && ./tool # run as the specified tool
