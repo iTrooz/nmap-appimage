@@ -25,4 +25,4 @@ echo "--- Packaging AppImage..."
 cd $DIR
 export VERSION=$NMAP_VER
 export UPDATE_INFORMATION="gh-releases-zsync|iTrooz|nmap-appimage|latest|nmap-*.AppImage.zsync"
-./linuxdeploy --appimage-extract-and-run --appdir AppDir -d nmap.desktop -i none.svg --custom-apprun AppRun --output appimage
+./linuxdeploy --appimage-extract-and-run --appdir AppDir -d nmap.desktop -i nmap.png --custom-apprun AppRun --output appimage
