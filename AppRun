@@ -8,7 +8,6 @@
 
 # INSPIRED BY https://www.skepticats.com/rox/wrappers.html#template
 
-# Set the name of the executable here.
 FULL_PATH=`realpath $0`
 APP_DIR=`dirname $0`
 EXEC_NAME=`basename $FULL_PATH`
