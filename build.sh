@@ -26,8 +26,8 @@ cd $DIR/nmap
 make install -j 4 DESTDIR=$DIR/AppDir || exit
 
 mkdir -p $DIR/AppDir/usr/share/metainfo
-cp $DIR/nmap.metainfo.xml $DIR/AppDir/usr/share/metainfo
-ln -s nmap.metainfo.xml $DIR/AppDir/usr/share/metainfo/nmap.appdata.xml 
+cp $DIR/org.nmap.metainfo.xml $DIR/AppDir/usr/share/metainfo
+ln -s org.nmap.metainfo.xml $DIR/AppDir/usr/share/metainfo/org.nmap.appdata.xml 
 
 echo "--- Packaging AppImage..."
 cd $DIR
