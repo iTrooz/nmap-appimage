@@ -7,6 +7,8 @@ I made this so it could be uploaded/used easily on compromised hosts (in CTF/sim
 
 Releases are automatic and happen each month, if a new nmap version was released
 
+nmap is a complety separate project not handled by me, found at https://nmap.org . This project only covers the AppImage packaging
+
 ## Syntax
 Different syntaxes are available :
 ```
