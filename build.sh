@@ -23,7 +23,7 @@ echo "--- Build nmap..."
 rm -rf $DIR/AppDir
 cd $DIR/nmap
 ./configure --with-nmap --with-ncat --with-nping --without-ndiff --without-zenmap --prefix /usr
-make install -j 4 DESTDIR=$DIR/AppDir
+make install -j 4 DESTDIR=$DIR/AppDir || exit
 
 mkdir -p $DIR/AppDir/usr/share/metainfo
 cp $DIR/nmap.metainfo.xml $DIR/AppDir/usr/share/metainfo
