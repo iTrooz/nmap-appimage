@@ -17,6 +17,7 @@ echo "-- nmap version is $NMAP_VER"
 echo $NMAP_VER > $DIR/NMAP_VERSION
 
 echo "--- Build nmap..."
+rm -rf $DIR/AppDir
 cd $DIR/nmap
 ./configure --with-nmap --with-ncat --with-nping --without-ndiff --without-zenmap --prefix /usr
 make install -j 4 DESTDIR=$DIR/AppDir
