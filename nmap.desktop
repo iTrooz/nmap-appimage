@@ -1,10 +1,9 @@
 [Desktop Entry]
 Type=Application
 Name=nmap
-GenericName=nmap utilities bundle
+GenericName=nmap/ncat/nping bundle in AppImage format
 Exec=./AppRun
 Icon=nmap
 Categories=Network;Security;
-Comment=This is a dummy desktop file, execution is handled by the custom apprun
 Terminal=true
 NoDisplay=true
