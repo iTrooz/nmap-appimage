@@ -27,4 +27,13 @@
         <category>Network</category>
         <category>System</category>
     </categories>
+
+    <screenshots>
+        <screenshot type="default">
+            <image>https://raw.githubusercontent.com/iTrooz/nmap-appimage/main/meta/nmap_scan.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/iTrooz/nmap-appimage/main/meta/ncat_open_port.png</image>
+        </screenshot>
+    </screenshots>
 </component>
