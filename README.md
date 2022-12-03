@@ -35,3 +35,9 @@ Note : if the environnment you are in doesn't have fuse, you may need to add the
 Launching multiple executables from the same AppImage is possible thanks to a modified AppRun , which was inspired by https://www.skepticats.com/rox/wrappers.html#template
 
 You can find a more generic modified version at https://gist.github.com/iTrooz/f287a48b95d672c3c97fea4f12a40891
+
+
+## Licence
+The licence only apply to my work (build.sh, github actions workflow, etc...).
+
+The nmap logo ([nmap.png](nmap.png) here) and any other nmap intellectual property are covered by the Nmap project (https://nmap.org/)
