@@ -52,3 +52,6 @@ jobs:
         with:
           artifacts: "*.AppImage,*.AppImage.zsync"
           tag: ${{env.NMAP_VERSION}}
+          
+      - name: Create a dummy commit to keep the repository active
+        uses: gautamkrishnar/keepalive-workflow@v1
