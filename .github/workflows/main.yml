@@ -18,8 +18,9 @@ jobs:
           apt update
           apt install -y git subversion curl make gcc g++ autoconf file appstream
       
+        # actions/checkout will fallback because git is too old, and gautamkrishnar/keepalive-workflow won't work
       - name: Checkout
-        uses: actions/checkout@v3
+        run: git clone https://github.com/iTrooz/nmap-appimage .
 
       - name: Run build script
         run: ./build.sh
