@@ -31,6 +31,10 @@ ln -s ncat nmap.AppImage
 ```
 Note : if the environnment you are in doesn't have fuse, you may need to add the flag `--appimage-extract-and-run`
 
+## Screenshots
+![nmap scan](https://raw.githubusercontent.com/iTrooz/nmap-appimage/main/meta/nmap_scan.png)
+![ncat open port](https://raw.githubusercontent.com/iTrooz/nmap-appimage/main/meta/ncat_open_port.png)
+
 ## How ?
 Launching multiple executables from the same AppImage is possible thanks to a modified AppRun , which was inspired by https://www.skepticats.com/rox/wrappers.html#template
 
