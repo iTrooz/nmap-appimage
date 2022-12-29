@@ -35,7 +35,7 @@ jobs:
       
       - name: Get last github release version
         id: last_version
-        uses: pozetroninc/github-action-get-latest-release@master
+        uses: pozetroninc/github-action-get-latest-release@v0.6.0
         with:
           repository: ${{ github.repository }}
 
