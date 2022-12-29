@@ -35,6 +35,9 @@ Note : if the environnment you are in doesn't have fuse, you may need to add the
 ![nmap scan](https://raw.githubusercontent.com/iTrooz/nmap-appimage/main/meta/nmap_scan.png)
 ![ncat open port](https://raw.githubusercontent.com/iTrooz/nmap-appimage/main/meta/ncat_open_port.png)
 
+## Build from source
+Simply run the [build.sh](https://github.com/iTrooz/nmap-appimage/blob/main/build.sh) script. You can take a look at the [CI workflow](https://github.com/iTrooz/nmap-appimage/blob/main/.github/workflows/main.yml) for more information, such as dependencies
+
 ## How ?
 Launching multiple executables from the same AppImage is possible thanks to a modified AppRun , which was inspired by https://www.skepticats.com/rox/wrappers.html#template
 
