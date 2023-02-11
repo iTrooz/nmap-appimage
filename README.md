@@ -39,6 +39,8 @@ Note : if the environnment you are in doesn't have fuse, you may need to add the
 Simply run the [build.sh](https://github.com/iTrooz/nmap-appimage/blob/main/build.sh) script. You can take a look at the [CI workflow](https://github.com/iTrooz/nmap-appimage/blob/main/.github/workflows/main.yml) for more information, such as dependencies
 
 ## How ?
+an AppImage is essentially an executable zipped file. Every file nmap could need is in it.
+
 Launching multiple executables from the same AppImage is possible thanks to a modified AppRun , which was inspired by https://www.skepticats.com/rox/wrappers.html#template
 
 You can find a more generic modified version at https://gist.github.com/iTrooz/f287a48b95d672c3c97fea4f12a40891
