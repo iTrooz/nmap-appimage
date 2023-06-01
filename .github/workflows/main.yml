@@ -16,7 +16,7 @@ jobs:
       - name: Install necessary tools
         run: |
           apt update
-          apt install -y git subversion curl make gcc g++ autoconf file appstream
+          apt install -y git subversion curl make gcc g++ autoconf file appstream libssl-dev
       
         # actions/checkout will fallback because git is too old, and gautamkrishnar/keepalive-workflow won't work
       - name: Checkout
