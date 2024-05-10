@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
      
     container:
-      image: ubuntu:16.04
+      image: ubuntu:20.04
 
     steps:
       - name: Install necessary tools
