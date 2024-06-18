@@ -29,7 +29,7 @@ jobs:
         run: ./build.sh
 
       - name: Upload AppImage
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: nmap AppImage
           path: |
@@ -38,7 +38,7 @@ jobs:
       
       - name: Get last github release version
         id: last_version
-        uses: pozetroninc/github-action-get-latest-release@v0.6.0
+        uses: pozetroninc/github-action-get-latest-release@v0.8.0
         with:
           repository: ${{ github.repository }}
 
@@ -58,4 +58,4 @@ jobs:
           tag: ${{env.NMAP_VERSION}}
           
       - name: Create a dummy commit to keep the repository active
-        uses: gautamkrishnar/keepalive-workflow@v1
+        uses: gautamkrishnar/keepalive-workflow@v2
