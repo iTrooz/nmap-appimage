@@ -30,6 +30,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Patch repository permissions # Else the repository will be owned by another user and git will complain
+        run: chown -R root:root .
+
       - name: Run build script
         run: ./build.sh
 
