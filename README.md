@@ -3,7 +3,7 @@
 ## Intro
 This is a self-contained package of nmap, ncat, and nping, built in Ubuntu 16.04
 
-I made this so it could be uploaded/used easily on compromised hosts (in CTF/similar of course)
+I made this so it could be uploaded/used easily in CTFs.
 
 Releases are automatic and happen each month, if a new nmap version was released
 
